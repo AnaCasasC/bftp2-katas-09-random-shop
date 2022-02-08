@@ -9,7 +9,7 @@ public class ShoppingCartTest {
     void calculatePriceForMagicCards_red() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
+        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - red", null);
 
         shoppingCart.addProduct(product);
 
@@ -20,11 +20,55 @@ public class ShoppingCartTest {
     void calculatePriceForMagicCards_blue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - Maga Eternal", null);
+        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - blue", null);
 
         shoppingCart.addProduct(product);
 
         assertThat(shoppingCart.getTotalPrice(), equalTo(5.0));
+    }
+
+    @Test
+    void calculatePriceForMagicCards_green() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - green", null);
+
+        shoppingCart.addProduct(product);
+
+        assertThat(shoppingCart.getTotalPrice(), equalTo(4.40));
+    }
+
+    @Test
+    void calculatePriceForMagicCards_brown() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Brown", null);
+
+        shoppingCart.addProduct(product);
+
+        assertThat(shoppingCart.getTotalPrice(), equalTo(2.00));
+    }
+
+    @Test
+    void calculatePriceForMagicCards_black() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Black", null);
+
+        shoppingCart.addProduct(product);
+
+        assertThat(shoppingCart.getTotalPrice(), equalTo(6.80));
+    }
+
+    @Test
+    void calculatePriceForMagicCards_blacklotus() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "blacklotus", null, "Magic: The Gathering - Black Lotus", null);
+
+        shoppingCart.addProduct(product);
+
+        assertThat(shoppingCart.getTotalPrice(), equalTo(40000.00));
     }
 
     @Test
@@ -38,6 +82,8 @@ public class ShoppingCartTest {
 
         assertThat(shoppingCart.getTotalPrice(), equalTo(100.0));
     }
+
+
 
     @Test
     void calculatePriceForCheese() {
